@@ -10,16 +10,16 @@ $("#user-input").keydown(function(event) {
 
       //TODO: Data storage/retrieval
       // Ran out of time on this one.
-      
+      /*
         // Command pattern: save | string
         var submission = $("#user-input").val();
-        var analyze = submission.split(" | ");
+        var analyze = submission.split("|");
         var save = analyze[0];
         var str = analyze[1];
 
         // Save string
         if(trimmed_value.length > 0) {
-            if(analyze[0] == "save" && input_value = save + " | " + str) {
+            if(analyze[0] == "save" && input_value = save + "|" + str) {
                 // Check browser compatibility
                 if (typeof(Storage) !== "undefined") {
 
@@ -31,7 +31,7 @@ $("#user-input").keydown(function(event) {
                 }
             }
         } 
-      
+      */
 
  
         // Check for actual value
