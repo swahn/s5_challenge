@@ -54,7 +54,7 @@ $("#user-input").keydown(function(event) {
 
                     break;
                     case 'help':
-                        $("#output").append(prefix + '<br><div class="output"><p>The following commands are defined internally:</p><br><p>clear \t Clear the terminal screen.</p><p>close \t Close sidebar.</p><p>detach \t Disengage menu.</p><p>help \t List available commands.</p><p>hm \t Hide menu.</p><p>lb \t Open lightbox.</p><p>ls \t List directory contents.</p><p>open \t Open sidebar.</p><p>sm \t Show menu.</p></div>');
+                        $("#output").append(prefix + '<br><div class="output"><p>The following commands are defined internally:</p><br><p>clear \t Clear the terminal screen.</p><p>close \t Close sidebar.</p><p>detach \t Disengage menu.</p><p>help \t List available commands.</p><p>hm \t Hide menu.</p><p>lb \t Open lightbox.</p><p>load \t Load saved string.</p><p>ls \t List directory contents.</p><p>open \t Open sidebar.</p><p>save | string \t Save a string.</p><p>sm \t Show menu.</p></div>');
                     break;
                     case 'hm':
                         $("#output").append(prefix + '<p class="output">Menu hidden.</p>');
