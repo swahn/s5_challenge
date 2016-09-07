@@ -10,7 +10,7 @@ $("#user-input").keydown(function(event) {
 
       //TODO: Data storage/retrieval
       // Ran out of time on this one.
-      /*
+      
         // Command pattern: save | string
         var submission = $("#user-input").val();
         var analyze = submission.split(" | ");
@@ -31,7 +31,7 @@ $("#user-input").keydown(function(event) {
                 }
             }
         } 
-      */
+      
 
  
         // Check for actual value
@@ -80,7 +80,7 @@ $("#user-input").keydown(function(event) {
               //TODO: Waiting on save logic
               /*  
                 case 'load':
-                    var data = localStorage.getItem("data");
+                    var data = sessionStorage.getItem("data");
                     $("#output").append(prefix + '<p class="output">Saved data:</p><br>' + data);
                 break;
               */
