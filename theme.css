@@ -81,10 +81,13 @@ a:hover {
 }
 
 input#user-input {
-  width: 600px;
+  width: 50%;
+  outline: none;
+  border: 0;
+  box-shadow: none;
 }
 
-/* Where am I even using this? */
+
 blink, .blink-cursor {
   animation: blink 1s step-end infinite;
 }
