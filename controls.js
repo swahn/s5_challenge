@@ -51,13 +51,13 @@ $("#user-input").keydown(function(event) {
                     $("#output").append(prefix + '<div class="output"><p>Opening lightbox&hellip;</p><p class="alert">Press <i>esc</i> to close.</p></div>');
                     $("#lightbox").show("slow");
                 break;
-   //TODO:LOAD: Waiting on save
-   /*    
-    *           case 'load':
-    *               var stored_data = localStorage.getItem("input_value");
-    *               $("#output").append(prefix + '<p class="output">Your stored data:</p><br>' + stored_data);
-    *           break;
-    */
+              //TODO:LOAD: Waiting on save
+               /*    
+                case 'load':
+                    var stored_data = localStorage.getItem("input_value");
+                    $("#output").append(prefix + '<p class="output">Your stored data:</p><br>' + stored_data);
+                break;
+               */
                 case 'ls':
                     $("#output").append(prefix + '<p class="output">menu.sh &nbsp; lbox.sh &nbsp; sidebar.sh</p>');
                 break;
@@ -65,9 +65,9 @@ $("#user-input").keydown(function(event) {
                     $("#output").append(prefix + '<p class="output">Sidebar open.</p>');
                     $("body").addClass("menu-open");
                 break;
-     //TODO:SAVE: This was a late addition, logic as of yet unsound
-     /*
-      *          case 'save':
+              //TODO:SAVE: This was a late addition, logic as of yet unsound
+               /*
+                case 'save':
                     if (typeof(Storage) !== "undefined") {
                         $("#output").append(prefix + '<p class="output">Enter string:</p>');
                         $("#user-input").keydown(function(event) {
@@ -80,7 +80,7 @@ $("#user-input").keydown(function(event) {
                         $("#output").append(prefix + '<p class="output">Sorry. Your browser does not support Web Storage.</p>');
                     }
                 break;
-      */
+               */
                 case 'sm':
                     $("#output").append(prefix + '<p class="output">Menu revealed.</p>');
                     $("#navigation").show();
