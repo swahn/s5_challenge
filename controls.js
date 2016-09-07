@@ -19,7 +19,7 @@ $("#user-input").keydown(function(event) {
 
         // Save string
         if(trimmed_value.length > 0) {
-            if(analyze[0] == "save" && input_value = save + "|" + str) {
+            if(analyze[0] == "save" && input_value == save + "|" + str) {
                 // Check browser compatibility
                 if (typeof(Storage) !== "undefined") {
 
