@@ -117,4 +117,4 @@ $(document).keyup(function(e){
     if(e.which == 13 && $(document.activeElement).not("#user-input")) {
         $("#user-input").focus();
     }
-})
+});
