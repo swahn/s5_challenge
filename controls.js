@@ -14,21 +14,16 @@ $("#user-input").keydown(function(event) {
         // Command pattern: save | string
         var submission = $("#user-input").val();
         var analyze = submission.split("|");
-        var save = analyze[0];
+        var cmd = analyze[0];
         var str = analyze[1];
-
-        // Save string
+        
         if(trimmed_value.length > 0) {
-            if(analyze[0] == "save" && input_value == save + "|" + str) {
-                // Check browser compatibility
-                if (typeof(Storage) !== "undefined") {
+            // Save string
+            if(cmd == "save") {
 
-                    sessionStorage.setItem("data", JSON.stringify(str));
-                    $("#output").append(prefix + '<p class="output">Data saved.</p>');
+                sessionStorage.setItem("data", JSON.stringify(str));
+                $("#output").append(prefix + '<p class="output">Data saved.</p>');
 
-                } else {      
-                    $("#output").append(prefix + '<p class="output">Sorry. Your browser does not support Web Storage.</p>');
-                }
             }
         } 
       */
