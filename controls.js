@@ -21,7 +21,7 @@ $("#user-input").keydown(function(event) {
             // Save string
             if(cmd == "save") {
 
-                sessionStorage.setItem("data", JSON.stringify(str));
+                sessionStorage.setItem("data", str);
                 $("#output").append(prefix + '<p class="output">Data saved.</p>');
 
             }
