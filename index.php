@@ -22,10 +22,9 @@
     
     <main id="main">
 
-      <!-- Draggable console -->
       <section class="content" id="content">
 
-        <!-- Menu -->
+        <!-- Draggable menu -->
         <nav id="navigation">
           <a href="index.php">home</a>
           <a href="about.php">about</a>
