@@ -2,7 +2,8 @@ $("#user-input").keydown(function(event) {
      // Check for return key
      if(event.which == 13) {
         event.preventDefault();
-       
+        
+        // Prepare i/o
         var input_value = $("#user-input").val();
         var command_prompt = '<span class="prior-prompt">Sensory_5@Coding-Challenge: ~ $ </span>';
         var prefix = command_prompt + input_value; 
@@ -16,7 +17,6 @@ $("#user-input").keydown(function(event) {
         var cmd = analyze[0];
         var str = analyze[1];
 
-        // convert to function that receives commands
         if(trimmed_value.length > 0) {
             // Save string
             if(cmd == "save") {
@@ -28,7 +28,7 @@ $("#user-input").keydown(function(event) {
         } 
       */
  
-        // Check for actual value
+        // Check for value
         if(trimmed_value.length > 0) {
             switch(input_value) {
                 case 'clear':
@@ -58,7 +58,6 @@ $("#user-input").keydown(function(event) {
                     $("#navigation").mouseup(function(e) {
                         $drag = null;
                     });
-           
                 break;
                 case 'help':
                     $("#output").append(prefix + '<br><div class="output"><p>The following commands are defined internally:</p><br><p>clear \t Clear the terminal screen.</p><p>close \t Close sidebar.</p><p>detach \t Disengage menu.</p><p>help \t List available commands.</p><p>hm \t Hide menu.</p><p>lb \t Open lightbox.</p><p>ls \t List directory contents.</p><p>open \t Open sidebar.</p><p>sm \t Show menu.</p></div>');
@@ -122,6 +121,3 @@ $(document).keyup(function(e){
         $("#user-input").focus();
     }
 })
-
-
-
