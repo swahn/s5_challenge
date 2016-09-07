@@ -51,13 +51,6 @@ $("#user-input").keydown(function(event) {
                     $("#output").append(prefix + '<div class="output"><p>Opening lightbox&hellip;</p><p class="alert">Press <i>esc</i> to close.</p></div>');
                     $("#lightbox").show("slow");
                 break;
-              //TODO:LOAD: Waiting on save
-               /*    
-                case 'load':
-                    var stored_data = localStorage.getItem("input_value");
-                    $("#output").append(prefix + '<p class="output">Your stored data:</p><br>' + stored_data);
-                break;
-               */
                 case 'ls':
                     $("#output").append(prefix + '<p class="output">menu.sh &nbsp; lbox.sh &nbsp; sidebar.sh</p>');
                 break;
@@ -65,22 +58,6 @@ $("#user-input").keydown(function(event) {
                     $("#output").append(prefix + '<p class="output">Sidebar open.</p>');
                     $("body").addClass("menu-open");
                 break;
-              //TODO:SAVE: This was a late addition, logic as of yet unsound
-               /*
-                case 'save':
-                    if (typeof(Storage) !== "undefined") {
-                        $("#output").append(prefix + '<p class="output">Enter string:</p>');
-                        $("#user-input").keydown(function(event) {
-                            if(event.which == 13) {
-                                event.preventDefault();
-                                localStorage.setItem("input_value", input_value);
-                            }
-                        });
-                    } else {      
-                        $("#output").append(prefix + '<p class="output">Sorry. Your browser does not support Web Storage.</p>');
-                    }
-                break;
-               */
                 case 'sm':
                     $("#output").append(prefix + '<p class="output">Menu revealed.</p>');
                     $("#navigation").show();
@@ -91,12 +68,44 @@ $("#user-input").keydown(function(event) {
             }            
         } 
           
-         /* //Carriage return with no input
+         /* // Make carriage return with no input?
           else if(trimmed_value.length == 0) {
             $("#output").append(prefix);
           } */
          
 
+       //TODO: Data storage/retrieval
+       
+       /*
+        $("#user-input").keydown(function(event) {
+            if(event.which == 13) {
+                event.preventDefault();
+        
+                // Check browser compatibility
+                if (typeof(Storage) !== "undefined") {
+        
+                    // Command pattern: save | string
+                    var $submission = $("#user-input").val();
+                    var analyze = $submission.split("|");
+                    var save = analyze[0];
+                    var data = analyze[1];
+        
+                    if(save == "save") {
+                        sessionStorage.setItem("save", $data);
+                    }
+
+                    // Load saved data
+                    if($("#user-input").val() == "load") {
+                        $("#output").append(prefix + '<p class="output">Saved data:</p><br>' + data);
+                    }
+
+                } else {      
+                    $("#output").append(prefix + '<p class="output">Sorry. Your browser does not support Web Storage.</p>');
+                }
+            }
+        });
+       */
+        
 
         // Clear input field
         $("#user-input").val("");
