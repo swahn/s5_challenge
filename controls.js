@@ -85,9 +85,7 @@ $("#user-input").keydown(function(event) {
               //TODO: Waiting on save logic
               /*
                 case 'load':
-                    if($("#user-input").val() == "load") {
-                        $("#output").append(prefix + '<p class="output">Saved data:</p><br>' + data);
-                    }
+                    $("#output").append(prefix + '<p class="output">Saved data:</p><br>' + data);
                 break;
               */
                 case 'ls':
