@@ -12,24 +12,19 @@ $("#user-input").keydown(function(event) {
       // Ran out of time on this one.
       /*
         // Command pattern: save | string
-        var $submission = $("#user-input").val();
-        var analyze = $submission.split(" | ");
-        var save;
-        if(analyze[0] == "save") {
-            save = analyze[0];
-        }
+        var submission = $("#user-input").val();
+        var analyze = submission.split(" | ");
+        var save = analyze[0];
         var data = analyze[1];
 
         // Save data
         if(trimmed_value.length > 0) {
-            if(input_value = save + " | " + data) {
+            if(analyze[0] == "save" && input_value = save + " | " + data) {
                 // Check browser compatibility
                 if (typeof(Storage) !== "undefined") {
 
-                    if(save == "save") {
-                        sessionStorage.setItem("save", data);
-                        $("#output").append(prefix + '<p class="output">Data saved.</p>');
-                    }
+                    sessionStorage.setItem("save", data);
+                    $("#output").append(prefix + '<p class="output">Data saved.</p>');
 
                 } else {      
                     $("#output").append(prefix + '<p class="output">Sorry. Your browser does not support Web Storage.</p>');
@@ -83,7 +78,7 @@ $("#user-input").keydown(function(event) {
                     $("#lightbox").show("slow");
                 break;
               //TODO: Waiting on save logic
-              /*
+              /*  
                 case 'load':
                     $("#output").append(prefix + '<p class="output">Saved data:</p><br>' + data);
                 break;
