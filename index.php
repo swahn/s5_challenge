@@ -18,18 +18,17 @@
     <aside class="menu-side" >
       Sidebar
     </aside>
-
     
     <main id="main">
 
-      <section class="content" id="content">
+      <!-- Draggable menu -->
+      <nav id="navigation">
+        <a href="index.php">home</a>
+        <a href="about.php">about</a>
+        <a href="details.php">details</a>
+      </nav>
 
-        <!-- Draggable menu -->
-        <nav id="navigation">
-          <a href="index.php">home</a>
-          <a href="about.php">about</a>
-          <a href="details.php">details</a>
-        </nav>
+      <section class="content" id="content">
 
         <div id="output"></div>
 
