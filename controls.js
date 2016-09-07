@@ -94,14 +94,11 @@ $("#user-input").keydown(function(event) {
             }            
         } 
           
-      //TODO: Carriage return when no input value
-      /*
+         // If no input value
         else if(trimmed_value.length == 0) {
-            $("#output").append(prefix);
+            $("#output").append(prefix + "<br>");
         }
-      */
         
-
         // Clear input field
         $("#user-input").val("");
     }
