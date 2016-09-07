@@ -6,17 +6,17 @@ $("#user-input").keydown(function(event) {
         var input_value = $("#user-input").val();
         var command_prompt = '<span class="prior-prompt">Sensory_5@Coding-Challenge: ~ $ </span>';
         var prefix = command_prompt + input_value; 
-        var trimmed_value = jQuery.trim($(input_value));
+        var trimmed_value = jQuery.trim(input_value);
 
       //TODO: Data storage/retrieval
       // Ran out of time on this one.
       /*
         // Command pattern: save | string
-        var submission = $("#user-input").val();
-        var analyze = submission.split("|");
+        var analyze = input_value.split("|");
         var cmd = analyze[0];
         var str = analyze[1];
-        
+
+        // convert to function that receives commands
         if(trimmed_value.length > 0) {
             // Save string
             if(cmd == "save") {
@@ -27,7 +27,6 @@ $("#user-input").keydown(function(event) {
             }
         } 
       */
-
  
         // Check for actual value
         if(trimmed_value.length > 0) {
