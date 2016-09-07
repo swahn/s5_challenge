@@ -15,15 +15,15 @@ $("#user-input").keydown(function(event) {
         var submission = $("#user-input").val();
         var analyze = submission.split(" | ");
         var save = analyze[0];
-        var data = analyze[1];
+        var str = analyze[1];
 
-        // Save data
+        // Save string
         if(trimmed_value.length > 0) {
-            if(analyze[0] == "save" && input_value = save + " | " + data) {
+            if(analyze[0] == "save" && input_value = save + " | " + str) {
                 // Check browser compatibility
                 if (typeof(Storage) !== "undefined") {
 
-                    sessionStorage.setItem("save", data);
+                    sessionStorage.setItem("data", JSON.stringify(str));
                     $("#output").append(prefix + '<p class="output">Data saved.</p>');
 
                 } else {      
@@ -80,6 +80,7 @@ $("#user-input").keydown(function(event) {
               //TODO: Waiting on save logic
               /*  
                 case 'load':
+                    var data = localStorage.getItem("data");
                     $("#output").append(prefix + '<p class="output">Saved data:</p><br>' + data);
                 break;
               */
