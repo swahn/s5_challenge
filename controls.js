@@ -7,6 +7,37 @@ $("#user-input").keydown(function(event) {
         var command_prompt = '<span class="prior-prompt">Sensory_5@Coding-Challenge: ~ $ </span>';
         var prefix = command_prompt + input_value; 
         var trimmed_value = jQuery.trim($(input_value));
+
+      //TODO: Data storage/retrieval
+      // Ran out of time on this one.
+      /*
+        // Command pattern: save | string
+        var $submission = $("#user-input").val();
+        var analyze = $submission.split(" | ");
+        var save;
+        if(analyze[0] == "save") {
+            save = analyze[0];
+        }
+        var data = analyze[1];
+
+        // Save data
+        if(trimmed_value.length > 0) {
+            if(input_value = save + " | " + data) {
+                // Check browser compatibility
+                if (typeof(Storage) !== "undefined") {
+
+                    if(save == "save") {
+                        sessionStorage.setItem("save", data);
+                        $("#output").append(prefix + '<p class="output">Data saved.</p>');
+                    }
+
+                } else {      
+                    $("#output").append(prefix + '<p class="output">Sorry. Your browser does not support Web Storage.</p>');
+                }
+            }
+        } 
+      */
+
  
         // Check for actual value
         if(trimmed_value.length > 0) {
@@ -41,7 +72,7 @@ $("#user-input").keydown(function(event) {
            
                 break;
                 case 'help':
-                    $("#output").append(prefix + '<br><div class="output"><p>The following commands are defined internally:</p><br><p>clear \t Clear the terminal screen.</p><p>close \t Close sidebar.</p><p>detach \t Disengage console.</p><p>help \t List available commands.</p><p>hm \t Hide menu.</p><p>lb \t Open lightbox.</p><p>ls \t List directory contents.</p><p>open \t Open sidebar.</p><p>sm \t Show menu.</p></div>');
+                    $("#output").append(prefix + '<br><div class="output"><p>The following commands are defined internally:</p><br><p>clear \t Clear the terminal screen.</p><p>close \t Close sidebar.</p><p>detach \t Disengage menu.</p><p>help \t List available commands.</p><p>hm \t Hide menu.</p><p>lb \t Open lightbox.</p><p>ls \t List directory contents.</p><p>open \t Open sidebar.</p><p>sm \t Show menu.</p></div>');
                 break;
                 case 'hm':
                     $("#output").append(prefix + '<p class="output">Menu hidden.</p>');
@@ -51,6 +82,14 @@ $("#user-input").keydown(function(event) {
                     $("#output").append(prefix + '<div class="output"><p>Opening lightbox&hellip;</p><p class="alert">Press <i>esc</i> to close.</p></div>');
                     $("#lightbox").show("slow");
                 break;
+              //TODO: Waiting on save logic
+              /*
+                case 'load':
+                    if($("#user-input").val() == "load") {
+                        $("#output").append(prefix + '<p class="output">Saved data:</p><br>' + data);
+                    }
+                break;
+              */
                 case 'ls':
                     $("#output").append(prefix + '<p class="output">menu.sh &nbsp; lbox.sh &nbsp; sidebar.sh</p>');
                 break;
@@ -68,48 +107,18 @@ $("#user-input").keydown(function(event) {
             }            
         } 
           
-         /* // Make carriage return with no input?
-          else if(trimmed_value.length == 0) {
+      //TODO: Carriage return when no input value
+      /*
+        else if(trimmed_value.length == 0) {
             $("#output").append(prefix);
-          } */
-         
-
-       //TODO: Data storage/retrieval
-       
-       /*
-        $("#user-input").keydown(function(event) {
-            if(event.which == 13) {
-                event.preventDefault();
-        
-                // Check browser compatibility
-                if (typeof(Storage) !== "undefined") {
-        
-                    // Command pattern: save | string
-                    var $submission = $("#user-input").val();
-                    var analyze = $submission.split("|");
-                    var save = analyze[0];
-                    var data = analyze[1];
-        
-                    if(save == "save") {
-                        sessionStorage.setItem("save", $data);
-                    }
-
-                    // Load saved data
-                    if($("#user-input").val() == "load") {
-                        $("#output").append(prefix + '<p class="output">Saved data:</p><br>' + data);
-                    }
-
-                } else {      
-                    $("#output").append(prefix + '<p class="output">Sorry. Your browser does not support Web Storage.</p>');
-                }
-            }
-        });
-       */
+        }
+      */
         
 
         // Clear input field
         $("#user-input").val("");
     }
+
 
     // Close lightbox
     if(event.which == 27) {
