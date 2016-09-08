@@ -8,7 +8,7 @@
     <main id="main">
 
       <!-- Draggable menu -->
-      <?php include 'menu.php'; ?>
+<?php include 'menu.php'; ?>
 
       <!-- About -->
       <div class="wrapper">

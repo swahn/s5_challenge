@@ -9,7 +9,7 @@
     <main id="main">
 
       <!-- Draggable menu -->
-      <?php include 'menu.php'; ?>
+<?php include 'menu.php'; ?>
 
       <section class="content" id="content">
 
