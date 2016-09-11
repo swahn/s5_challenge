@@ -20,6 +20,22 @@ $details = <<<HTML
 
 HTML;
 
+
+
+function metaData() {
+    global $home, $about, $details;
+    
+    $arr = array("index.php" => $home, "about.php" => $about, "details.php" => $details);
+    $url = basename($_SERVER['PHP_SELF']);
+
+    foreach($arr as $key => $value){
+    
+        if($url == $key) {
+            echo $value;
+        }
+    }
+}
+
 ?>
 <!doctype html>
 <html>
@@ -28,20 +44,7 @@ HTML;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Stephen Swahn">
 
-<?php
- 
-switch(basename($_SERVER['PHP_SELF'])) {
-    case 'index.php':
-        echo $home;
-    break;
-    case 'about.php':
-        echo $about;
-    break;
-    case 'details.php':
-        echo $details;
-    break;
-}
-?>
+<?php metaData(); ?>
 
     <link rel="shortcut icon" href="http://sensory5.com/wp-content/uploads/udf_foundry/images/favicon.png">
     <link rel="stylesheet" type="text/css" href="theme.css">
