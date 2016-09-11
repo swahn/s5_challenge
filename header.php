@@ -20,8 +20,6 @@ $details = <<<HTML
 
 HTML;
 
-
-
 function metaData() {
     global $home, $about, $details;
     
