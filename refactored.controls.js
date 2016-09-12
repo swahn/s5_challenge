@@ -20,7 +20,6 @@ command.close = function() {
     document.body.classList.remove("menu-open");
 };
 
-
 /**
  * detach - draggable menu
  */ 
@@ -48,7 +47,6 @@ command.detach = function() {
         drag = null;
     }
 };
-
 
 /**
  * help - list commands
@@ -96,9 +94,7 @@ command.open = function() {
     document.body.classList.add("menu-open");
 };
 
-
 /* TODO:Save command 
-
 
     // Command pattern: save | string
     var analyze = toSave.split(" | ");
@@ -126,6 +122,7 @@ command.sm = function() {
 
 
 // end object list //
+
 
 
 /**
