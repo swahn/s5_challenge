@@ -21,13 +21,19 @@ $details = <<<HTML
 HTML;
 
 function metaData() {
-    global $home, $about, $details;
     
-    $arr = array("index.php" => $home, "about.php" => $about, "details.php" => $details);
+    global $home, 
+           $about, 
+           $details;
+
+    $arr = array(
+            "index.php" => $home, 
+            "about.php" => $about, 
+            "details.php" => $details);
+
     $url = basename($_SERVER['PHP_SELF']);
 
     foreach($arr as $key => $value){
-    
         if($url == $key) {
             echo $value;
         }
