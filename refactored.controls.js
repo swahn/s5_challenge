@@ -187,7 +187,7 @@ function Control() {
 
     // If enter with no input value return line break
     else if (value.trim().length == 0) {
-      output().innerHTML = output.innerHTML + prefix() + "<br>";
+      output().innerHTML = output().innerHTML + prefix() + "<br>";
     } 
 }
 
