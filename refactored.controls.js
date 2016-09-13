@@ -21,6 +21,14 @@ command.close = function() {
 };
 
 /**
+ * date - current date
+ */ 
+command.date = function() {
+    var date = new Date();
+    output().innerHTML = output().innerHTML + prefix() + '<div class="output">' + date.toDateString() + '</div>';
+}
+
+/**
  * detach - draggable menu
  */ 
 command.detach = function() {
