@@ -45,7 +45,6 @@ command.detach = function() {
     }
 
     document.getElementById("navigation").onmousedown = function(e) {
-        // change this
         drag = $(e.target);
     }
 
