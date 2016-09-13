@@ -16,7 +16,6 @@ command.clear = function() {
  */ 
 command.close = function() {
     output().innerHTML += prefix() + '<br><p class="output">Sidebar closed.</p>';
-
     document.body.classList.remove("menu-open");
 };
 
@@ -33,7 +32,6 @@ command.date = function() {
  */ 
 command.detach = function() {
     output().innerHTML += prefix() + '<div class="output"><p>Disengaging menu&hellip;</p><p class="alert">Menu <i>draggable</i>.</p></div>',
-
     document.getElementById("navigation").style.border = "1px solid white";
 
     var drag = null;
@@ -67,7 +65,6 @@ command.help = '<div class="output"><p>The following commands are defined intern
  */ 
 command.hm = function() {
     output().innerHTML += prefix() + '<br><p class="output">Menu hidden.</p>';
-
     document.getElementById("navigation").style.display = "none";
 };
 
@@ -76,7 +73,6 @@ command.hm = function() {
  */
 command.lb = function() {
     output().innerHTML += prefix() + '<br><div class="output"><p>Opening lightbox&hellip;</p><p class="alert">Press <i>esc</i> to close.</p></div>';
-
     document.getElementById("lightbox").style.display = "block";
 };
 
@@ -85,7 +81,6 @@ command.lb = function() {
  */
 command.load = function() {
     var data = sessionStorage.getItem("data");
-
     output().innerHTML += prefix() + '<br><div class="output"><p>Saved data:</p>' + data + '</div>';
 };
 
@@ -99,7 +94,6 @@ command.ls = '<p class="output">menu.sh &nbsp; lbox.sh &nbsp; sidebar.sh</p>';
  */ 
 command.open = function() {
     output().innerHTML += prefix() + '<br><p class="output">Sidebar open.</p>';
-
     document.body.classList.add("menu-open");
 };
 
@@ -126,7 +120,6 @@ command.save = function() {
  */
 command.sm = function() {
     output().innerHTML += prefix() + '<br><p class="output">Menu revealed.</p>';
-
     document.getElementById("navigation").style.display = "block";
 };
 
