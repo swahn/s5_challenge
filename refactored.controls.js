@@ -15,7 +15,7 @@ command.clear = function() {
  * close - close sidebar
  */ 
 command.close = function() {
-    output().innerHTML = output().innerHTML + prefix() + '<br><p class="output">Sidebar closed.</p>';
+    output().innerHTML += prefix() + '<br><p class="output">Sidebar closed.</p>';
 
     document.body.classList.remove("menu-open");
 };
@@ -25,14 +25,14 @@ command.close = function() {
  */ 
 command.date = function() {
     var date = new Date();
-    output().innerHTML = output().innerHTML + prefix() + '<div class="output">' + date.toDateString() + '</div>';
+    output().innerHTML += prefix() + '<div class="output">' + date.toDateString() + '</div>';
 }
 
 /**
  * detach - draggable menu
  */ 
 command.detach = function() {
-    output().innerHTML = output().innerHTML + prefix() + '<div class="output"><p>Disengaging menu&hellip;</p><p class="alert">Menu <i>draggable</i>.</p></div>',
+    output().innerHTML += prefix() + '<div class="output"><p>Disengaging menu&hellip;</p><p class="alert">Menu <i>draggable</i>.</p></div>',
 
     document.getElementById("navigation").style.border = "1px solid white";
 
@@ -56,16 +56,17 @@ command.detach = function() {
     }
 };
 
+
 /**
  * help - list commands
  */
-command.help = command.help = '<div class="output"><p>The following commands are defined internally:</p><br><p>clear \t Clear the terminal screen.</p><p>close \t Close sidebar.</p><p>date \t Display current date.</p><p>detach \t Disengage menu.</p><p>help \t List available commands.</p><p>hm \t Hide menu.</p><p>lb \t Open lightbox.</p><p>load \t Load saved string.</p><p>ls \t List directory contents.</p><p>open \t Open sidebar.</p><p>save | string \t Save a string.</p><p>sm \t Show menu.</p></div>';
+command.help = '<div class="output"><p>The following commands are defined internally:</p><br><p>clear \t Clear the terminal screen.</p><p>close \t Close sidebar.</p><p>date \t Display current date.</p><p>detach \t Disengage menu.</p><p>help \t List available commands.</p><p>hm \t Hide menu.</p><p>lb \t Open lightbox.</p><p>load \t Load saved string.</p><p>ls \t List directory contents.</p><p>open \t Open sidebar.</p><p>save | string \t Save a string.</p><p>sm \t Show menu.</p></div>';
 
 /**
  * hm - hide menu
  */ 
 command.hm = function() {
-    output().innerHTML = output().innerHTML + prefix() + '<br><p class="output">Menu hidden.</p>';
+    output().innerHTML += prefix() + '<br><p class="output">Menu hidden.</p>';
 
     document.getElementById("navigation").style.display = "none";
 };
@@ -74,7 +75,7 @@ command.hm = function() {
  * lb - show lightbox (w/o animation)
  */
 command.lb = function() {
-    output().innerHTML = output().innerHTML + prefix() + '<br><div class="output"><p>Opening lightbox&hellip;</p><p class="alert">Press <i>esc</i> to close.</p></div>';
+    output().innerHTML += prefix() + '<br><div class="output"><p>Opening lightbox&hellip;</p><p class="alert">Press <i>esc</i> to close.</p></div>';
 
     document.getElementById("lightbox").style.display = "block";
 };
@@ -85,7 +86,7 @@ command.lb = function() {
 command.load = function() {
     var data = sessionStorage.getItem("data");
 
-    output().innerHTML = output().innerHTML + prefix() + '<br><div class="output"><p>Saved data:</p>' + data + '</div>';
+    output().innerHTML += prefix() + '<br><div class="output"><p>Saved data:</p>' + data + '</div>';
 };
 
 /**
@@ -97,12 +98,14 @@ command.ls = '<p class="output">menu.sh &nbsp; lbox.sh &nbsp; sidebar.sh</p>';
  * open - open sidebar
  */ 
 command.open = function() {
-    output().innerHTML = output().innerHTML + prefix() + '<br><p class="output">Sidebar open.</p>';
+    output().innerHTML += prefix() + '<br><p class="output">Sidebar open.</p>';
 
     document.body.classList.add("menu-open");
 };
 
+
 /* TODO:Save command 
+
 
     // Command pattern: save | string
     var analyze = toSave.split(" | ");
@@ -122,7 +125,7 @@ command.save = function() {
  * sm - show menu
  */
 command.sm = function() {
-    output().innerHTML = output().innerHTML + prefix() + '<br><p class="output">Menu revealed.</p>';
+    output().innerHTML += prefix() + '<br><p class="output">Menu revealed.</p>';
 
     document.getElementById("navigation").style.display = "block";
 };
@@ -130,7 +133,6 @@ command.sm = function() {
 
 
 // end object list //
-
 
 
 /**
@@ -182,20 +184,20 @@ function Control() {
 
                 } else {
 
-                    var result = (output().innerHTML = output().innerHTML + prefix() + "<br>" + command[value]);
+                    var result = (output().innerHTML += prefix() + "<br>" + command[value]);
                     return result;
                 }
             } 
         }
 
         // Command not found
-        var cnf = output().innerHTML = output().innerHTML + prefix() + '<br><p class="output">Command not found. For a list of commands type <i>help</i>.</p>';
+        var cnf = output().innerHTML += prefix() + '<br><p class="output">Command not found. For a list of commands type <i>help</i>.</p>';
         return cnf;
     }
 
     // If enter with no input value return line break
     else if (value.trim().length == 0) {
-      output().innerHTML = output().innerHTML + prefix() + "<br>";
+      output().innerHTML += prefix() + "<br>";
     } 
 }
 
