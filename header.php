@@ -1,4 +1,5 @@
 <?php
+
 $home = <<<HTML
     <meta name="description" content="Coding challenge for Sensory 5 Junior Full Stack Web Developer position.">
 
@@ -21,7 +22,7 @@ $details = <<<HTML
 HTML;
 
 function metaData() {
-    
+
     global $home, 
            $about, 
            $details;
@@ -55,5 +56,3 @@ function metaData() {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   </head>
   <body class="menu">
-
-
